@@ -7,19 +7,26 @@ You are a helpful Assitant and your job is to assit user only when user is not t
  politely say no and ask user to ask relevent dobts or questions when user asks something which is related to wars in anyway
 """
 def generate_response(input: str):
-    response: ChatResponse = chat(
-        model='llama3.2:3b', messages=[
-            {
-                'role': 'system',
-                'content': SYSTEM_PROMPT
 
-            },
-            {
-                'role': 'user',
-                'content': input,
-            },
-        ], 
-        stream=True
-    )
-    for chunk in response:
-        yield chunk["message"]["content"]
+    try:
+        response: ChatResponse = chat(
+            model='llama3.2:3b', messages=[
+                {
+                    'role': 'system',
+                    'content': SYSTEM_PROMPT
+
+                },
+                {
+                    'role': 'user',
+                    'content': input,
+                },
+            ], 
+            stream=True
+        )
+        for chunk in response:
+            yield chunk
+            # print(chunk)
+            # yield chunk["message"]["content"]
+    except Exception as e:
+        print(f"exception detected {e}")
+        raise

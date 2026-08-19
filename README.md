@@ -25,10 +25,10 @@ Build one chatbot in stages. Each project adds a small number of new ideas, so t
 **Features to build:**
 
 - Token-by-token or chunked streaming output
-- A visible thinking/loading state
+- A visible thinking/loading state #since this is a terminal it would just be a print statement before llm call probably so not implementng
 - Graceful interruption with `Ctrl+C`
 - Response timing and token usage information
-- A small configuration menu for model and temperature
+- A small configuration menu for model and temperature # does not add value its a basic ui and function passing feature and not an ai thing also since this is on local llm and we don't have many llms hardware limitations
 
 **Core concepts learned:** Streaming responses, generators or async iteration, terminal output, and latency measurement.
 
