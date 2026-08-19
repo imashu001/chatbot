@@ -10,7 +10,7 @@ Build one chatbot in stages. Each project adds a small number of new ideas, so t
 
 - A clear input and response loop
 - A system prompt that defines the assistant's behavior
-- A configurable model and API key loaded from environment variables
+- A configurable model and API key loaded from environment variables ### not doing this as we are doing on local system and we don't have cloud url and keys to llm
 - Friendly handling for empty input, exit commands, and API errors
 - A clean project structure with a `README`, dependency file, and `.env.example`
 
