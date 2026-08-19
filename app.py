@@ -17,7 +17,15 @@ def main():
             break
 
         # calling and printing llm output
-        print(f"chatbot : {generate_response(input=user_input)}")
+        # print(f"chatbot : {generate_response(input=user_input)}")
+
+        # streaming response 
+        print("Chatbot: ", end="", flush=True)
+
+        for chunk in generate_response(user_input):
+            print(chunk, end="", flush=True)
+
+        print()
 
 
 if __name__ == "__main__":
